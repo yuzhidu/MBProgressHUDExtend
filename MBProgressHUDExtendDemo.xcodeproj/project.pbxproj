@@ -33,6 +33,7 @@
 		6A5D6AD31E0CFC6600CF2A21 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		6A5D6AD71E0D1B7700CF2A21 /* IconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconViewController.h; sourceTree = "<group>"; };
 		6A5D6AD81E0D1B7700CF2A21 /* IconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconViewController.m; sourceTree = "<group>"; };
+		6A82B8AF1E11107A003D91E8 /* MBProgressHUDExtend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBProgressHUDExtend.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +96,7 @@
 				6A5D6AD01E0CFC6600CF2A21 /* MBProgressHUD+YU.m */,
 				6A5D6AD21E0CFC6600CF2A21 /* MBProgressHUD.h */,
 				6A5D6AD31E0CFC6600CF2A21 /* MBProgressHUD.m */,
+				6A82B8AF1E11107A003D91E8 /* MBProgressHUDExtend.h */,
 			);
 			path = MBProgressHUDExtend;
 			sourceTree = "<group>";
@@ -328,6 +330,7 @@
 				6A5D6ACD1E0CFC4600CF2A21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
