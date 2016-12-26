@@ -21,7 +21,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
 //    [MBProgressHUD showIcon:@"1" tip:@"qq" inView:self.view];
-    [MBProgressHUD addButton:nil inView:self.view];
 }
 
 @end
