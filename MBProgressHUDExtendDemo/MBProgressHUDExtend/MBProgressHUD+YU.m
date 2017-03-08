@@ -18,41 +18,31 @@ static const CGFloat kTitleFontSize = 16.f;
 
 @implementation MBProgressHUD (YU)
 
-//-------------------------显示自定义文字,几秒后消失--------------
-/**  只显示文字,几秒后消失 */
-+ (void)showTipAutoHide:(NSString *)tip
-{
+/** 自动消失：文字 */
++ (void)showTipAutoHide:(NSString *)tip {
     [self showTipAutoHide:tip icon:nil inView:nil];
 }
-/**  只显示文字,几秒后消失(放到指定view中) */
-+ (void)showTipAutoHide:(NSString *)tip inView:(UIView *)view
-{
+/** 自动消失：文字(放到指定view中) */
++ (void)showTipAutoHide:(NSString *)tip inView:(UIView *)view {
     [self showTipAutoHide:tip icon:nil inView:view];
 }
 
-
-//--------------------------显示自定义图片,几秒后消失--------------
-/**  只显示图片,几秒后消失 */
-+ (void)showIconAutoHide:(NSString *)icon
-{
+/** 自动消失：图片 */
++ (void)showIconAutoHide:(NSString *)icon {
     [self showTipAutoHide:nil icon:icon inView:nil];
 }
-/**  只显示图片,几秒后消失(放到指定view中) */
-+ (void)showIconAutoHide:(NSString *)icon inView:(UIView *)view
-{
+/** 自动消失：图片(放到指定view中) */
++ (void)showIconAutoHide:(NSString *)icon
+                  inView:(UIView *)view {
     [self showTipAutoHide:nil icon:icon inView:view];
 }
 
-
-//-------------------------显示自定义图片和文字,几秒后消失----------
-/**  显示文字和图片,几秒后消失 */
-+ (void)showTipAutoHide:(NSString *)tip icon:(NSString *)icon
-{
+/** 自动消失：文字和图片 */
++ (void)showTipAutoHide:(NSString *)tip icon:(NSString *)icon {
     [self showTipAutoHide:tip icon:icon inView:nil];
 }
-/**  显示文字和图片,几秒后消失(放到指定view中) */
-+ (void)showTipAutoHide:(NSString *)tip icon:(NSString *)icon inView:(UIView *)view
-{
+/** 自动消失：文字和图片(放到指定view中) */
++ (void)showTipAutoHide:(NSString *)tip icon:(NSString *)icon inView:(UIView *)view {
     if (view == nil) {
         view = [[UIApplication sharedApplication].windows firstObject];
     }
@@ -84,27 +74,20 @@ static const CGFloat kTitleFontSize = 16.f;
 }
 
 
-//--------------------------显示菊花HUD-------------------------------
-/** 只显示菊花(需要主动让它消失,HUD放在Window中) */
-+ (MBProgressHUD *)showActivityIndicatorView
-{
-    return [self showActivityIndicatorViewWithTip:nil inView:nil];
+/** 手动消失：菊花 */
++ (MBProgressHUD *)showActivityIndicator {
+    return [self showActivityIndicatorWithTip:nil inView:nil];
 }
-
-+ (MBProgressHUD *)showActivityIndicatorViewInView:(UIView *)view
-{
-    return [self showActivityIndicatorViewWithTip:nil inView:view];
+/** 手动消失：菊花(放在指定view中) */
++ (MBProgressHUD *)showActivityIndicatorInView:(UIView *)view {
+    return [self showActivityIndicatorWithTip:nil inView:view];
 }
-
-/** 显示菊花和文字(需要主动让它消失,HUD放在Window中) */
-+ (MBProgressHUD *)showActivityIndicatorViewWithTip:(NSString *)tip
-{
-    return [self showActivityIndicatorViewWithTip:tip inView:nil];
+/** 手动消失：菊花和文字 */
++ (MBProgressHUD *)showActivityIndicatorWithTip:(NSString *)tip {
+    return [self showActivityIndicatorWithTip:tip inView:nil];
 }
-
-/** 显示菊花和文字(需要主动让它消失，HUD放到指定view中) */
-+ (MBProgressHUD *)showActivityIndicatorViewWithTip:(NSString *)tip inView:(UIView *)view
-{
+/** 手动消失：菊花和文字(放到指定view中) */
++ (MBProgressHUD *)showActivityIndicatorWithTip:(NSString *)tip inView:(UIView *)view {
     if (view == nil) {
         view = [[UIApplication sharedApplication].windows firstObject];
     }
@@ -131,25 +114,29 @@ static const CGFloat kTitleFontSize = 16.f;
     return hud;
 }
 
-//--------------------------显示自定义图片-------------------------------
-/** 自定义图片(需要主动让它消失,HUD放在Window中) */
-+ (MBProgressHUD *)showIcon:(NSString *)icon
-{
+
+/** 手动消失：文字 */
++ (MBProgressHUD *)showTip:(NSString *)tip {
+    return [self showIcon:nil tip:tip inView:nil];
+}
+/** 手动消失：文字(放在指定view中) */
++ (MBProgressHUD *)showTip:(NSString *)tip inView:(UIView *)view {
+    return [self showIcon:nil tip:tip inView:view];
+}
+/** 手动消失：图片 */
++ (MBProgressHUD *)showIcon:(NSString *)icon {
     return [self showIcon:icon tip:nil inView:nil];
 }
-/** 自定义图片(需要主动让它消失,HUD放在指定view中) */
-+ (MBProgressHUD *)showIcon:(NSString *)icon inView:(UIView *)view
-{
+/** 手动消失：图片(放在指定view中) */
++ (MBProgressHUD *)showIcon:(NSString *)icon inView:(UIView *)view {
     return [self showIcon:icon tip:nil inView:view];
 }
-/** 自定义图片，文字(需要主动让它消失,HUD放在Window中) */
-+ (MBProgressHUD *)showIcon:(NSString *)icon tip:(NSString *)tip
-{
+/** 手动消失：图片，文字 */
++ (MBProgressHUD *)showIcon:(NSString *)icon tip:(NSString *)tip {
     return [self showIcon:icon tip:tip inView:nil];
 }
-/** 自定义图片，文字(需要主动让它消失，HUD放到指定view中) */
-+ (MBProgressHUD *)showIcon:(NSString *)icon tip:(NSString *)tip inView:(UIView *)view
-{
+/** 手动消失：图片，文字(放到指定view中) */
++ (MBProgressHUD *)showIcon:(NSString *)icon tip:(NSString *)tip inView:(UIView *)view {
     if (view == nil) {
         view = [[UIApplication sharedApplication].windows firstObject];
     }
@@ -179,15 +166,13 @@ static const CGFloat kTitleFontSize = 16.f;
     return hud;
 }
 
-//--------------------------隐藏HUD-------------------------------
+
 /** 隐藏HUD(HUD在Window中) */
-+ (void)hideHUD
-{
++ (void)hideHUD {
     [self hideHUDInView:nil];
 }
 /** 隐藏HUD(HUD在指定view中) */
-+ (void)hideHUDInView:(UIView *)view
-{
++ (void)hideHUDInView:(UIView *)view {
     if (view == nil) {
         view = [[UIApplication sharedApplication].windows firstObject];
     }
