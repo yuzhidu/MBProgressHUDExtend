@@ -14,6 +14,42 @@
 
 @interface MBProgressHUD (YU)
 
+/** 手动消失：文字 */
++ (MBProgressHUD *)showTip:(NSString *)tip;
+/** 手动消失：文字(放在指定view中) */
++ (MBProgressHUD *)showTip:(NSString *)tip
+                    inView:(UIView *)view;
+/** 手动消失：图片 */
++ (MBProgressHUD *)showIcon:(NSString *)icon;
+/** 手动消失：图片(放在指定view中) */
++ (MBProgressHUD *)showIcon:(NSString *)icon
+                     inView:(UIView *)view;
+/** 手动消失：图片，文字 */
++ (MBProgressHUD *)showIcon:(NSString *)icon
+                        tip:(NSString *)tip;
+/** 手动消失：图片，文字(放到指定view中) */
++ (MBProgressHUD *)showIcon:(NSString *)icon
+                        tip:(NSString *)tip
+                     inView:(UIView *)view;
+
+/** 手动隐藏HUD */
++ (void)hideHUD;
+/** 手动隐藏HUD(HUD在指定view中) */
++ (void)hideHUDInView:(UIView *)view;
+
+// 特别说明：手动隐藏菊花是调用上边两个隐藏方法
+/** 手动消失：菊花 */
++ (MBProgressHUD *)showActivityIndicator;
+/** 手动消失：菊花(放在指定view中) */
++ (MBProgressHUD *)showActivityIndicatorInView:(UIView *)view;
+/** 手动消失：菊花和文字 */
++ (MBProgressHUD *)showActivityIndicatorWithTip:(NSString *)tip;
+/** 手动消失：菊花和文字(放到指定view中) */
++ (MBProgressHUD *)showActivityIndicatorWithTip:(NSString *)tip
+                                         inView:(UIView *)view;
+
+/**************************************************************/
+
 /** 自动消失：文字 */
 + (void)showTipAutoHide:(NSString *)tip;
 /** 自动消失：文字(放到指定view中) */
@@ -33,39 +69,5 @@
 + (void)showTipAutoHide:(NSString *)tip
                    icon:(NSString *)icon
                  inView:(UIView *)view;
-
-
-/** 手动消失：菊花 */
-+ (MBProgressHUD *)showActivityIndicator;
-/** 手动消失：菊花(放在指定view中) */
-+ (MBProgressHUD *)showActivityIndicatorInView:(UIView *)view;
-/** 手动消失：菊花和文字 */
-+ (MBProgressHUD *)showActivityIndicatorWithTip:(NSString *)tip;
-/** 手动消失：菊花和文字(放到指定view中) */
-+ (MBProgressHUD *)showActivityIndicatorWithTip:(NSString *)tip
-                                         inView:(UIView *)view;
-
-/** 手动消失：文字 */
-+ (MBProgressHUD *)showTip:(NSString *)tip;
-/** 手动消失：文字(放在指定view中) */
-+ (MBProgressHUD *)showTip:(NSString *)tip
-                    inView:(UIView *)view;
-/** 手动消失：图片 */
-+ (MBProgressHUD *)showIcon:(NSString *)icon;
-/** 手动消失：图片(放在指定view中) */
-+ (MBProgressHUD *)showIcon:(NSString *)icon
-                     inView:(UIView *)view;
-/** 手动消失：图片，文字 */
-+ (MBProgressHUD *)showIcon:(NSString *)icon
-                        tip:(NSString *)tip;
-/** 手动消失：图片，文字(放到指定view中) */
-+ (MBProgressHUD *)showIcon:(NSString *)icon
-                        tip:(NSString *)tip
-                     inView:(UIView *)view;
-
-/** 隐藏HUD(HUD在Window中) */
-+ (void)hideHUD;
-/** 隐藏HUD(HUD在指定view中) */
-+ (void)hideHUDInView:(UIView *)view;
 
 @end

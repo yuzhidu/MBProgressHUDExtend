@@ -70,8 +70,10 @@
             break;
         case 6:
         {
-            IconViewController *iconVC = [[IconViewController alloc] init];
-            [self.navigationController pushViewController:iconVC animated:YES];
+            [MBProgressHUD showActivityIndicatorWithTip:@"加载中..."];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUD];
+            });
         }
             break;
             
