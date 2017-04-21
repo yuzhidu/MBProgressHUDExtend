@@ -43,6 +43,8 @@ static const CGFloat kTitleFontSize = 15.f;
     if (view == nil) {
         view = [[UIApplication sharedApplication].windows firstObject];
     }
+    // 如果之前有hud，先隐藏之前的hud
+    [self hideHUDForView:view animated:NO];
     // 快速显示一个提示信息
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     
@@ -102,6 +104,8 @@ static const CGFloat kTitleFontSize = 15.f;
     if (view == nil) {
         view = [[UIApplication sharedApplication].windows firstObject];
     }
+    // 如果之前有hud，先隐藏之前的hud
+    [self hideHUDForView:view animated:NO];
     // 快速显示一个提示信息
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     
@@ -155,6 +159,8 @@ static const CGFloat kTitleFontSize = 15.f;
     if (view == nil) {
         view = [[UIApplication sharedApplication].windows firstObject];
     }
+    // 如果之前有hud，先隐藏之前的hud
+    [self hideHUDForView:view animated:NO];
     // 快速显示一个提示信息
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     
