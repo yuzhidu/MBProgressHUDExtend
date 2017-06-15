@@ -14,7 +14,7 @@
 ## 二、方法
 
 HUD 自动消失
-```
+```objectivec
 /** 自动消失：文字 */
 + (void)showTipAutoHide:(NSString *)tip;
 /** 自动消失：文字(放到指定view中) */
@@ -37,7 +37,7 @@ HUD 自动消失
 ```
 
 使用ActivityIndicatorView
-```
+```objectivec
 /** 手动消失：菊花 */
 + (MBProgressHUD *)showActivityIndicator;
 /** 手动消失：菊花(放在指定view中) */
@@ -50,7 +50,7 @@ HUD 自动消失
 ```
 
 HUD 手动消失
-```
+```objectivec
 /** 手动消失：文字 */
 + (MBProgressHUD *)showTip:(NSString *)tip;
 /** 手动消失：文字(放在指定view中) */
@@ -72,7 +72,7 @@ HUD 手动消失
 ```
 
 隐藏方法
-```
+```objectivec
 /** 隐藏HUD(HUD在Window中) */
 + (void)hideHUD;
 /** 隐藏HUD(HUD在指定view中) */
