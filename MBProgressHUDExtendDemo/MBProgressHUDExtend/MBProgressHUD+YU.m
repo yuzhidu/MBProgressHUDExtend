@@ -41,7 +41,7 @@ static const CGFloat kTitleFontSize = 15.f;
 /** 手动消失：图片，文字(放到指定view中) */
 + (MBProgressHUD *)showIcon:(NSString *)icon tip:(NSString *)tip inView:(UIView *)view {
     if (view == nil) {
-        view = [[UIApplication sharedApplication].windows firstObject];
+        view = [UIApplication sharedApplication].keyWindow;
     }
     // 如果之前有hud，先隐藏之前的hud
     [self hideHUDForView:view animated:NO];
@@ -71,19 +71,6 @@ static const CGFloat kTitleFontSize = 15.f;
     return hud;
 }
 
-/** 隐藏HUD(HUD在Window中) */
-+ (void)hideHUD {
-    [self hideHUDInView:nil];
-}
-/** 隐藏HUD(HUD在指定view中) */
-+ (void)hideHUDInView:(UIView *)view {
-    if (view == nil) {
-        view = [[UIApplication sharedApplication].windows firstObject];
-    }
-    [self hideHUDForView:view animated:YES];
-}
-
-// 特别说明：手动隐藏菊花是调用上边两个隐藏方法
 /** 手动消失：菊花 */
 + (MBProgressHUD *)showActivityIndicator {
     return [self showActivityIndicatorWithTip:nil inView:nil];
@@ -102,7 +89,7 @@ static const CGFloat kTitleFontSize = 15.f;
     [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = [UIColor whiteColor];
     
     if (view == nil) {
-        view = [[UIApplication sharedApplication].windows firstObject];
+        view = [UIApplication sharedApplication].keyWindow;
     }
     // 如果之前有hud，先隐藏之前的hud
     [self hideHUDForView:view animated:NO];
@@ -127,6 +114,18 @@ static const CGFloat kTitleFontSize = 15.f;
     hud.removeFromSuperViewOnHide = YES;
     
     return hud;
+}
+
+/** 隐藏HUD(HUD在Window中) */
++ (void)hideHUD {
+    [self hideHUDInView:nil];
+}
+/** 隐藏HUD(HUD在指定view中) */
++ (void)hideHUDInView:(UIView *)view {
+    if (view == nil) {
+        view = [UIApplication sharedApplication].keyWindow;
+    }
+    [self hideHUDForView:view animated:YES];
 }
 
 /**************************************************************************************************/
@@ -157,7 +156,7 @@ static const CGFloat kTitleFontSize = 15.f;
 /** 自动消失：文字和图片(放到指定view中) */
 + (void)showTipAutoHide:(NSString *)tip icon:(NSString *)icon inView:(UIView *)view {
     if (view == nil) {
-        view = [[UIApplication sharedApplication].windows firstObject];
+        view = [UIApplication sharedApplication].keyWindow;
     }
     // 如果之前有hud，先隐藏之前的hud
     [self hideHUDForView:view animated:NO];
